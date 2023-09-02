@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LA FAMEUSE ENIGME !!!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        #cadre {
+            width: 80%;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cadre">
+        <h1>Accès restreint</h1>
+        <p>Ce message est protégé par un mot de passe. Entrez le mot de passe pour y accéder :</p>
+        <input type="password" id="motDePasse">
+        <button onclick="verifierMotDePasse()">Valider</button>
+        <div id="messageSecret" style="display:none;">
+            <h1>Message Secret</h1>
+            <p>Bravo,t'as réussi à trouver la solution! Voici la suite de l'énigme:</p>
+            <p>Ceci est le message secret que tu cherchais !.</p>
+        </div>
+    </div>
+
+    <script>
+        function verifierMotDePasse() {
+            var motDePasse = document.getElementById("motDePasse").value;
+            if (motDePasse === "BPDMTCRATL2L") {
+                document.getElementById("messageSecret").style.display = "block";
+            } else {
+                alert("Mot de passe incorrect. Réessayez.");
+            }
+        }
+    </script>
+</body>
+</html>
